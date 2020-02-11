@@ -1,21 +1,33 @@
 .home {
-
+  .jumbotron {
+    img {
+      margin-bottom: 2em;
+    }
+    @media @mobile {
+      border-bottom: 2px dashed @silver;
+      width: 95%;
+    }
+  }
   .content-section {
     margin: 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
     .text-content {
       width: 48%;
       padding-right: 1%;
+      @media @mobile {
+        width: 95%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+      @media @mobile {
+        width: 95%;
+      }
 
       img {
         border-radius: 10px;
@@ -26,6 +38,10 @@
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+    @media @mobile {
+      .centeredCol();
+      flex-direction: column-reverse;
+    }
 
     .text-content {
       padding-left: 1%;
@@ -35,12 +51,18 @@
     .img-content {
       padding-right: 1%;
       padding-left: 0;
+      // @media @mobile {
+      //   display: none;
+      // }
     }
   }
 
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
+    @media @mobile {
+      width: 95%;
+    }
 
     img {
       border-radius: 10px;
@@ -52,10 +74,39 @@
     border-top: 2px dashed @navigation-border;
     display: flex;
     justify-content: space-between;
+    @media @mobile {
+      .centeredCol();
+      width: 100%;
+      align-items: center;
+    }
 
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      @media @mobile {
+        width: 80%;
+      }
+    }
+    .btn {
+      .button(85%, 4.5rem, @button-bg, @white);
+      //button(@width, @height, @background, @color)
+      background-color: @button-bg;
+      // color: white;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 20px;
+      // width: 30%;
+      cursor: pointer;
+      .border-radius(15px);
+
+      &:hover {
+        background-color: @white;
+        color: @button-bg;
+        border: 1px solid @button-bg;
+      }
+      @media @mobile {
+        font-size: 16px;
+      }
     }
   }
-}// home
+} // home
